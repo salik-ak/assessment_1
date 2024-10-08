@@ -12,6 +12,17 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import base64
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+print("--------------------------------------------------")
+print('hallo',key)
+
+# Store  key securely
+FERNET_KEY = key  # Replace actual key
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
